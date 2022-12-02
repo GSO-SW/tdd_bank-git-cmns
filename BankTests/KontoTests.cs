@@ -32,5 +32,16 @@ namespace BankTests
             //assert
             Assert.AreEqual(startguthaben, k.Guthaben);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Konto_KannNichtMitNegativemBetragErstelltWerden()
+        {
+            //Arrange
+            int guthaben = -1;
+            //Act
+            Konto k = new Konto(guthaben);
+        }
+
     }
 }
